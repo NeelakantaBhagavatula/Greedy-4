@@ -75,12 +75,16 @@ class Solution {
 			int k = Collections.binarySearch(list, sp); // k elements, O(logk)
 
 			if (k < 0) { // if element not found
-				k = -k - 1;
+				// sp = 21
+				// [0, 1, 6, 9, 17, 19] --> -6-1 = -7
+				k = -k - 1; // 7-1 = 6
 			}
 
 			if (k >= list.size()) {
 				count++;
-				sp = list.get(0);
+				sp = list.get(0); // reset the pointer to starting index of the character if k > size of list,
+									// meaning subsequence has ended so reset the pointer to the first occurence of
+									// the character and increment the pointer to point to next character
 			} else {
 				sp = list.get(k);
 			}
