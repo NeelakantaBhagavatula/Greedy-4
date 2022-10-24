@@ -75,9 +75,9 @@ class Solution {
 			int k = Collections.binarySearch(list, sp); // k elements, O(logk)
 
 			if (k < 0) { // if element not found
-				// sp = 21
-				// [0, 1, 6, 9, 17, 19] --> -6-1 = -7
-				k = -k - 1; // 7-1 = 6
+				// sp = 13
+				// [0, 1, 6, 9, 17, 19] --> -4-1 = -5
+				k = -k - 1; // 5-1 = 4
 			}
 
 			if (k >= list.size()) {
