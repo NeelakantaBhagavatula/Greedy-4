@@ -47,6 +47,52 @@
 //	}
 //}
 
+// Time Complexity : O(n) where n = length of tops array or length of bottoms array
+// Space Complexity : O(1)
+//class Solution {
+//	public int minDominoRotations(int[] tops, int[] bottoms) {
+//		HashMap<Integer, Integer> map = new HashMap<>();
+//		int n = tops.length;
+//		int candidate = -1;
+//
+//		for (int i = 0; i < n; i++) { // O(n)
+//			int t = tops[i];
+//			map.put(t, map.getOrDefault(t, 0) + 1);
+//			int countT = map.get(t);
+//
+//			if (countT >= n) {
+//				candidate = t;
+//				break;
+//			}
+//
+//			int b = bottoms[i];
+//			map.put(b, map.getOrDefault(b, 0) + 1);
+//			int countB = map.get(b);
+//
+//			if (countB >= n) {
+//				candidate = b;
+//				break;
+//			}
+//		}
+//
+//		if (candidate == -1)
+//			return -1;
+//
+//		int tRot = 0, bRot = 0;
+//
+//		for (int i = 0; i < n; i++) { // O(n)
+//			if (tops[i] != candidate && bottoms[i] != candidate)
+//				return -1;
+//			if (tops[i] != candidate)
+//				tRot++;
+//			if (bottoms[i] != candidate)
+//				bRot++;
+//		}
+//
+//		return Math.min(tRot, bRot);
+//	}
+//}
+
 // Time Complexity : O(n) where n = length of tops or bottom array
 // Space Complexity : O(1)
 class Solution {
